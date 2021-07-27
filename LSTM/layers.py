@@ -80,16 +80,19 @@ class LSTM:
 
         self.layers = []
 
+    def __call__(self, xs):
+        return self.forward(xs)
+
     def forward(self, xs):
         """
         forward pass of T steps
         :param xs: shape (N, T, D)
-        :return:
+        :return: hs: shape (N, T, H)
         """
         N, T, D = xs.shape
         Wx, Wh, b = self.params
         H = b.shape[0]//4
-        self.layers = []
+        self.layers = [] # important
         for t in range(T):
             self.layers.append(LSTMCell(Wx, Wh, b))
         hs = np.zeros((N, T, H))
@@ -199,69 +202,31 @@ class Dense:
         return dx
 
 
-class SoftmaxCrossEntropyLoss:
-    def __init__(self):
+class Embedding:
+    def __init__(self, W):
         """
-        softmax layer with cross entropy loss
+        a freeze embedding layer
+        :param W: shape (V, D), where V is the vocab size, D is word vec dimension
         """
-        self.cache = None
-        self.params = []
-        self.grads = []
-        pass
-
-    def forward(self, o, y):
-        """
-        :param o: model output, shape (N, O)
-        :param y: true label, shape (N,), where 0<=y[i]<O
-        :return:
-        """
-        # print(o.shape, y.shape)
-        y_ = softmax(o)
-        self.cache = (y_, y)
-        N, = y.shape
-        # print(N)
-        loss = -sum(np.log(y_[np.arange(N), y]))/N
-        return loss
-
-    def backward(self, dl=1):
-        y_, y = self.cache
-        N, D = y_.shape
-        dl /= N
-        do = y_.copy()
-        for n in range(N):
-            do[n][y[n]] -= 1
-        do *= dl
-        return do
-
-
-class MSELoss:
-    def __init__(self):
-        self.params = []
-        self.grads = []
+        self.params = [W]
         self.cache = None
 
-    def forward(self, o, y):
+    def __call__(self, xs):
+        return self.forward(xs)
+
+    def forward(self, xs):
         """
 
-        :param o: model output, shape (N, O)
-        :param y: supervision label, shape (N,)
-        :return:
+        :param xs: shape (N, T)
+        :return: shape (N, T, D)
         """
-        N, = y.shape
-        y_ = np.zeros_like(o)
-        for n in range(N):
-            y_[n][y[n]] = 1
-        loss = np.sum((o-y_)**2)/2
-        loss /= N
-        self.cache = (o, y_)
-        return loss
-
-    def backward(self, dy=1):
-        o, y_ = self.cache
-        N, O = o.shape
-        do = o-y_
-        do /= N
-        return do
+        W = self.params[0]
+        V, D = W.shape
+        N, T = xs.shape
+        ys = np.zeros((N, T, D))
+        for t in range(T):
+            ys[:, t, :] = W[xs[:, t]]
+        return ys
 
 
 def test_linear():
@@ -287,10 +252,6 @@ def test_mean():
     mean = TimeMean()
     print(mean.forward(np.ones((10, 5, 5))))
     print(mean.backward(dy=np.ones((5, 5))))
-
-
-def test_softmax():
-    softmax_layer = SoftmaxCrossEntropyLoss()
 
 
 if __name__ == '__main__':

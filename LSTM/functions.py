@@ -17,3 +17,7 @@ def softmax(x):
     x_sum = np.sum(x, axis=1)
     x /= x_sum.reshape((-1, 1))
     return x
+
+
+def l2norm(x):
+    return np.sqrt(np.sum(x**2))
