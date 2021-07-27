@@ -202,6 +202,45 @@ class Dense:
         return dx
 
 
+class TimeDense:
+    def __init__(self, W, b):
+        self.params = [W, b]
+        self.grads = [np.zeros_like(W), np.zeros_like(b)]
+        self.cache = None
+        self.layers = []
+
+    def __call__(self, xs):
+        return self.forward(xs)
+
+    def forward(self, xs):
+        """
+
+        :param xs: shape (N, T, H)
+        :return: ys: shape (N, T, V)
+        """
+        self.cache = xs.shape
+        N, T, H = self.cache
+        W, b = self.params
+        H, V = W.shape
+        ys = np.zeros((N, T, V))
+        self.layers = []
+        for t in range(T):
+            layer = Dense(W, b)
+            ys[:, t, :] = layer.forward(xs[:, t, :])
+            self.layers.append(layer)
+        return ys
+
+    def backward(self, dys):
+        N, T, H = self.cache
+        dxs = np.zeros(self.cache)
+        for t in range(T):
+            layer = self.layers[t]
+            dxs[:, t, :] = layer.backward(dys[:, t, :])
+            self.grads[0] += layer.grads[0]
+            self.grads[1] += layer.grads[1]
+        return dxs
+
+
 class Embedding:
     def __init__(self, W):
         """
@@ -238,7 +277,7 @@ def test_linear():
     ys = np.array([[1, 2, 3, 4],
                    [2, 3, 4, 5]])
     from optimizer import SGD
-    opt = SGD()
+    opt = SGD(learning_rate=0.001) # i don't know why a learning rate of 0.1 lead to crash, but 0.001 is good
     for i in range(100):
         os = linear.forward(xs)
         loss = np.sum((ys-os)**2)/2
@@ -251,7 +290,7 @@ def test_linear():
 def test_mean():
     mean = TimeMean()
     print(mean.forward(np.ones((10, 5, 5))))
-    print(mean.backward(dy=np.ones((5, 5))))
+    print(mean.backward(dy=np.ones((10, 5))))
 
 
 if __name__ == '__main__':

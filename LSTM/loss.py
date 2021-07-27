@@ -37,6 +37,43 @@ class SoftmaxCrossEntropyLoss:
         return do
 
 
+class TimeSoftmaxCrossEntropyLoss:
+    def __init__(self):
+        self.params = []
+        self.grads = []
+        self.cache = None
+        self.layers = []
+
+    def __call__(self, xs, ys):
+        return self.forward(xs, ys)
+
+    def forward(self, xs, ys):
+        """
+
+        :param xs: (N, T, V), predicted probability distribution
+        :param ys: (N, T), true label
+        :return:
+        """
+        N, T, V = xs.shape
+        self.cache = xs.shape
+        self.layers = []
+        loss = 0
+        for t in range(T):
+            layer = SoftmaxCrossEntropyLoss()
+            loss += layer.forward(xs[:, t, :], ys[:, t])
+            self.layers.append(layer)
+        loss /= T
+        return loss
+
+    def backward(self, dl=1):
+        N, T, V = self.cache
+        dl /= T
+        dxs = np.zeros(self.cache)
+        for t in range(T):
+            dxs[:, t, :] = self.layers[t].backward(dl)
+        return dxs
+
+
 class MSELoss:
     def __init__(self):
         self.params = []
