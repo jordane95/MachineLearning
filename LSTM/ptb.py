@@ -4,9 +4,10 @@ from optimizer import SGD
 from glove import get_glove_vec
 from ptb_loader import read_data, make_batch, get_word_index
 import numpy as np
+import os
 
 
-MAX_EPOCHS = 5
+MAX_EPOCHS = 50
 BATCH_SIZE = 128
 TIME_STEP = 60
 
@@ -58,6 +59,21 @@ class LSTMLm:
         dxs = self.lstm.backward(dxs)
         return dxs
 
+    def save_param(self):
+        np.savez('model/lm.npz',
+                 Wx=self.params[0], Wh=self.params[1], b=self.params[2],
+                 Wl=self.params[3], bl=self.params[4])
+        return None
+
+    def load_param(self):
+        npz = np.load('model/lm.npz')
+        self.params[0] = npz['Wx']
+        self.params[1] = npz['Wh']
+        self.params[2] = npz['b']
+        self.params[3] = npz['Wl']
+        self.params[4] = npz['bl']
+        return None
+
 
 def train():
     # loading training data
@@ -65,22 +81,33 @@ def train():
     word_index = get_word_index()
     # build model
     lm = LSTMLm(word_index=word_index, embed_size=EMBED_SIZE, hidden_size=HIDDEN_SIZE)
-    opt = SGD(learning_rate=0.1)
+    if os.path.exists('model/lm.npz'): lm.load_param()
+    perplexities = []
+    opt = SGD(learning_rate=1)
     num_batches = len(data_batches)
     for epoch in range(MAX_EPOCHS):
+        opt.learning_rate = 1.0/(1.0+1.0*epoch)
         loss = 0
         print("-"*10+"EPOCH"+str(epoch+1)+"-"*10)
         for i in range(num_batches):
             x = data_batches[i]
             y = label_batches[i]
             loss_ite = lm.forward(x, y)
+            perplexities.append(np.exp(loss_ite))
             lm.backward()
             opt.update(lm.params, lm.grads)
             loss += loss_ite
             if i % 10 == 0: print("iteration %d, perplexity %d" % (i+1, np.exp(loss_ite)))
         loss /= num_batches
-        print("One epoch finished")
+        print("-"*10+"FINISH"+"-"*10)
         print("Epoch %d, perplexity %d" % (epoch + 1, np.exp(loss)))
+    lm.save_param()
+    import matplotlib.pyplot as plt
+    plt.plot(perplexities, label='training perplexity')
+    plt.xlabel('step')
+    plt.ylabel('perplexity')
+    plt.legend()
+    plt.savefig('results/ptb/perplexity_40epoch.jpg')
 
 
 if __name__ == '__main__':
