@@ -7,7 +7,7 @@ import numpy as np
 import os
 
 
-MAX_EPOCHS = 50
+MAX_EPOCHS = 10
 BATCH_SIZE = 128
 TIME_STEP = 60
 
@@ -22,7 +22,7 @@ class LSTMLm:
         Wx = np.random.randn(embed_size, 4*hidden_size)
         Wh = np.random.randn(hidden_size, 4*hidden_size)
         b = np.zeros(4*hidden_size)
-        Wl = .1*np.random.randn(hidden_size, vocab_size)
+        Wl = np.random.randn(hidden_size, vocab_size)
         bl = np.zeros(vocab_size)
 
         self.embed = Embedding(We)
@@ -59,19 +59,21 @@ class LSTMLm:
         dxs = self.lstm.backward(dxs)
         return dxs
 
-    def save_param(self):
-        np.savez('model/lm.npz',
+    def save_param(self, save_path='model/lm.npz'):
+        np.savez(save_path,
                  Wx=self.params[0], Wh=self.params[1], b=self.params[2],
                  Wl=self.params[3], bl=self.params[4])
+        print("Model parameters successfully saved !")
         return None
 
-    def load_param(self):
-        npz = np.load('model/lm.npz')
-        self.params[0] = npz['Wx']
-        self.params[1] = npz['Wh']
-        self.params[2] = npz['b']
-        self.params[3] = npz['Wl']
-        self.params[4] = npz['bl']
+    def load_param(self, load_path='model/lm.npz'):
+        npz = np.load(load_path)
+        self.params[0][...] = npz['Wx']
+        self.params[1][...] = npz['Wh']
+        self.params[2][...] = npz['b']
+        self.params[3][...] = npz['Wl']
+        self.params[4][...] = npz['bl']
+        print("Model parameters successfully loaded !")
         return None
 
 
@@ -83,11 +85,11 @@ def train():
     lm = LSTMLm(word_index=word_index, embed_size=EMBED_SIZE, hidden_size=HIDDEN_SIZE)
     if os.path.exists('model/lm.npz'): lm.load_param()
     perplexities = []
-    opt = SGD(learning_rate=1)
+    opt = SGD(learning_rate=0.1)
     num_batches = len(data_batches)
     for epoch in range(MAX_EPOCHS):
-        opt.learning_rate = 1.0/(1.0+1.0*epoch)
         loss = 0
+        opt.lr = 1.0/(1.0+epoch)
         print("-"*10+"EPOCH"+str(epoch+1)+"-"*10)
         for i in range(num_batches):
             x = data_batches[i]
@@ -101,13 +103,13 @@ def train():
         loss /= num_batches
         print("-"*10+"FINISH"+"-"*10)
         print("Epoch %d, perplexity %d" % (epoch + 1, np.exp(loss)))
-    lm.save_param()
+    lm.save_param(save_path='model/lm60.npz')
     import matplotlib.pyplot as plt
     plt.plot(perplexities, label='training perplexity')
     plt.xlabel('step')
     plt.ylabel('perplexity')
     plt.legend()
-    plt.savefig('results/ptb/perplexity_40epoch.jpg')
+    plt.savefig('results/ptb/perplexity_epoch50-60.jpg')
 
 
 if __name__ == '__main__':

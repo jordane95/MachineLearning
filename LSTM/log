@@ -1,0 +1,753 @@
+----------EPOCH1----------
+iteration 1, perplexity 10494
+iteration 11, perplexity 7769
+iteration 21, perplexity 5400
+iteration 31, perplexity 3253
+iteration 41, perplexity 2397
+iteration 51, perplexity 2146
+iteration 61, perplexity 1867
+iteration 71, perplexity 1796
+iteration 81, perplexity 1513
+iteration 91, perplexity 1438
+iteration 101, perplexity 1416
+iteration 111, perplexity 1292
+----------FINISH----------
+Epoch 1, perplexity 2463
+----------EPOCH2----------
+iteration 1, perplexity 1265
+iteration 11, perplexity 1183
+iteration 21, perplexity 1196
+iteration 31, perplexity 1131
+iteration 41, perplexity 1088
+iteration 51, perplexity 1128
+iteration 61, perplexity 1072
+iteration 71, perplexity 1149
+iteration 81, perplexity 1025
+iteration 91, perplexity 1013
+iteration 101, perplexity 1035
+iteration 111, perplexity 993
+----------FINISH----------
+Epoch 2, perplexity 1095
+----------EPOCH3----------
+iteration 1, perplexity 987
+iteration 11, perplexity 934
+iteration 21, perplexity 961
+iteration 31, perplexity 932
+iteration 41, perplexity 899
+iteration 51, perplexity 943
+iteration 61, perplexity 915
+iteration 71, perplexity 985
+iteration 81, perplexity 892
+iteration 91, perplexity 881
+iteration 101, perplexity 902
+iteration 111, perplexity 882
+----------FINISH----------
+Epoch 3, perplexity 920
+----------EPOCH4----------
+iteration 1, perplexity 880
+iteration 11, perplexity 831
+iteration 21, perplexity 861
+iteration 31, perplexity 840
+iteration 41, perplexity 812
+iteration 51, perplexity 854
+iteration 61, perplexity 836
+iteration 71, perplexity 899
+iteration 81, perplexity 822
+iteration 91, perplexity 811
+iteration 101, perplexity 830
+iteration 111, perplexity 819
+----------FINISH----------
+Epoch 4, perplexity 836
+----------EPOCH5----------
+iteration 1, perplexity 819
+iteration 11, perplexity 770
+iteration 21, perplexity 801
+iteration 31, perplexity 783
+iteration 41, perplexity 761
+iteration 51, perplexity 799
+iteration 61, perplexity 787
+iteration 71, perplexity 846
+iteration 81, perplexity 775
+iteration 91, perplexity 766
+iteration 101, perplexity 782
+iteration 111, perplexity 778
+----------FINISH----------
+Epoch 5, perplexity 784
+----------EPOCH6----------
+iteration 1, perplexity 778
+iteration 11, perplexity 730
+iteration 21, perplexity 760
+iteration 31, perplexity 743
+iteration 41, perplexity 726
+iteration 51, perplexity 761
+iteration 61, perplexity 753
+iteration 71, perplexity 808
+iteration 81, perplexity 743
+iteration 91, perplexity 734
+iteration 101, perplexity 747
+iteration 111, perplexity 748
+----------FINISH----------
+Epoch 6, perplexity 747
+----------EPOCH7----------
+iteration 1, perplexity 749
+iteration 11, perplexity 700
+iteration 21, perplexity 730
+iteration 31, perplexity 714
+iteration 41, perplexity 700
+iteration 51, perplexity 733
+iteration 61, perplexity 727
+iteration 71, perplexity 779
+iteration 81, perplexity 717
+iteration 91, perplexity 709
+iteration 101, perplexity 720
+iteration 111, perplexity 725
+----------FINISH----------
+Epoch 7, perplexity 719
+----------EPOCH8----------
+iteration 1, perplexity 726
+iteration 11, perplexity 677
+iteration 21, perplexity 706
+iteration 31, perplexity 691
+iteration 41, perplexity 678
+iteration 51, perplexity 711
+iteration 61, perplexity 706
+iteration 71, perplexity 757
+iteration 81, perplexity 697
+iteration 91, perplexity 689
+iteration 101, perplexity 698
+iteration 111, perplexity 706
+----------FINISH----------
+Epoch 8, perplexity 697
+----------EPOCH9----------
+iteration 1, perplexity 707
+iteration 11, perplexity 658
+iteration 21, perplexity 687
+iteration 31, perplexity 673
+iteration 41, perplexity 661
+iteration 51, perplexity 692
+iteration 61, perplexity 688
+iteration 71, perplexity 738
+iteration 81, perplexity 680
+iteration 91, perplexity 673
+iteration 101, perplexity 680
+iteration 111, perplexity 690
+----------FINISH----------
+Epoch 9, perplexity 680
+----------EPOCH10----------
+iteration 1, perplexity 692
+iteration 11, perplexity 642
+iteration 21, perplexity 671
+iteration 31, perplexity 657
+iteration 41, perplexity 646
+iteration 51, perplexity 677
+iteration 61, perplexity 673
+iteration 71, perplexity 722
+iteration 81, perplexity 666
+iteration 91, perplexity 659
+iteration 101, perplexity 665
+iteration 111, perplexity 675
+----------FINISH----------
+Epoch 10, perplexity 665
+----------EPOCH11----------
+iteration 1, perplexity 680
+iteration 11, perplexity 629
+iteration 21, perplexity 657
+iteration 31, perplexity 644
+iteration 41, perplexity 633
+iteration 51, perplexity 664
+iteration 61, perplexity 663
+iteration 71, perplexity 709
+iteration 81, perplexity 654
+iteration 91, perplexity 648
+iteration 101, perplexity 652
+iteration 111, perplexity 663
+----------FINISH----------
+Epoch 11, perplexity 652
+----------EPOCH12----------
+iteration 1, perplexity 668
+iteration 11, perplexity 618
+iteration 21, perplexity 645
+iteration 31, perplexity 633
+iteration 41, perplexity 622
+iteration 51, perplexity 651
+iteration 61, perplexity 653
+iteration 71, perplexity 697
+iteration 81, perplexity 643
+iteration 91, perplexity 637
+iteration 101, perplexity 640
+iteration 111, perplexity 653
+----------FINISH----------
+Epoch 12, perplexity 641
+----------EPOCH13----------
+iteration 1, perplexity 658
+iteration 11, perplexity 608
+iteration 21, perplexity 634
+iteration 31, perplexity 623
+iteration 41, perplexity 612
+iteration 51, perplexity 641
+iteration 61, perplexity 640
+iteration 71, perplexity 687
+iteration 81, perplexity 634
+iteration 91, perplexity 628
+iteration 101, perplexity 630
+iteration 111, perplexity 646
+----------FINISH----------
+Epoch 13, perplexity 631
+----------EPOCH14----------
+iteration 1, perplexity 649
+iteration 11, perplexity 599
+iteration 21, perplexity 625
+iteration 31, perplexity 613
+iteration 41, perplexity 604
+iteration 51, perplexity 632
+iteration 61, perplexity 631
+iteration 71, perplexity 677
+iteration 81, perplexity 626
+iteration 91, perplexity 620
+iteration 101, perplexity 623
+iteration 111, perplexity 650
+----------FINISH----------
+Epoch 14, perplexity 624
+----------EPOCH15----------
+iteration 1, perplexity 645
+iteration 11, perplexity 590
+iteration 21, perplexity 617
+iteration 31, perplexity 605
+iteration 41, perplexity 595
+iteration 51, perplexity 624
+iteration 61, perplexity 624
+iteration 71, perplexity 669
+iteration 81, perplexity 618
+iteration 91, perplexity 613
+iteration 101, perplexity 615
+iteration 111, perplexity 627
+----------FINISH----------
+Epoch 15, perplexity 614
+----------EPOCH16----------
+iteration 1, perplexity 634
+iteration 11, perplexity 584
+iteration 21, perplexity 667
+iteration 31, perplexity 641
+iteration 41, perplexity 620
+iteration 51, perplexity 642
+iteration 61, perplexity 639
+iteration 71, perplexity 680
+iteration 81, perplexity 627
+iteration 91, perplexity 618
+iteration 101, perplexity 622
+iteration 111, perplexity 634
+----------FINISH----------
+Epoch 16, perplexity 629
+----------EPOCH17----------
+iteration 1, perplexity 637
+iteration 11, perplexity 588
+iteration 21, perplexity 613
+iteration 31, perplexity 600
+iteration 41, perplexity 591
+iteration 51, perplexity 616
+iteration 61, perplexity 617
+iteration 71, perplexity 662
+iteration 81, perplexity 609
+iteration 91, perplexity 603
+iteration 101, perplexity 607
+iteration 111, perplexity 621
+----------FINISH----------
+Epoch 17, perplexity 608
+----------EPOCH18----------
+iteration 1, perplexity 623
+iteration 11, perplexity 577
+iteration 21, perplexity 601
+iteration 31, perplexity 589
+iteration 41, perplexity 582
+iteration 51, perplexity 607
+iteration 61, perplexity 607
+iteration 71, perplexity 652
+iteration 81, perplexity 601
+iteration 91, perplexity 595
+iteration 101, perplexity 599
+iteration 111, perplexity 613
+----------FINISH----------
+Epoch 18, perplexity 598
+----------EPOCH19----------
+iteration 1, perplexity 616
+iteration 11, perplexity 570
+iteration 21, perplexity 593
+iteration 31, perplexity 582
+iteration 41, perplexity 575
+iteration 51, perplexity 600
+iteration 61, perplexity 600
+iteration 71, perplexity 645
+iteration 81, perplexity 594
+iteration 91, perplexity 589
+iteration 101, perplexity 592
+iteration 111, perplexity 607
+----------FINISH----------
+Epoch 19, perplexity 591
+----------EPOCH20----------
+iteration 1, perplexity 610
+iteration 11, perplexity 563
+iteration 21, perplexity 587
+iteration 31, perplexity 576
+iteration 41, perplexity 569
+iteration 51, perplexity 593
+iteration 61, perplexity 593
+iteration 71, perplexity 638
+iteration 81, perplexity 588
+iteration 91, perplexity 583
+iteration 101, perplexity 586
+iteration 111, perplexity 601
+----------FINISH----------
+Epoch 20, perplexity 585
+----------EPOCH21----------
+iteration 1, perplexity 604
+iteration 11, perplexity 558
+iteration 21, perplexity 580
+iteration 31, perplexity 570
+iteration 41, perplexity 564
+iteration 51, perplexity 588
+iteration 61, perplexity 587
+iteration 71, perplexity 632
+iteration 81, perplexity 583
+iteration 91, perplexity 578
+iteration 101, perplexity 580
+iteration 111, perplexity 596
+----------FINISH----------
+Epoch 21, perplexity 579
+----------EPOCH22----------
+iteration 1, perplexity 598
+iteration 11, perplexity 553
+iteration 21, perplexity 575
+iteration 31, perplexity 565
+iteration 41, perplexity 558
+iteration 51, perplexity 582
+iteration 61, perplexity 581
+iteration 71, perplexity 626
+iteration 81, perplexity 578
+iteration 91, perplexity 572
+iteration 101, perplexity 575
+iteration 111, perplexity 590
+----------FINISH----------
+Epoch 22, perplexity 574
+----------EPOCH23----------
+iteration 1, perplexity 593
+iteration 11, perplexity 548
+iteration 21, perplexity 569
+iteration 31, perplexity 560
+iteration 41, perplexity 553
+iteration 51, perplexity 577
+iteration 61, perplexity 576
+iteration 71, perplexity 621
+iteration 81, perplexity 573
+iteration 91, perplexity 567
+iteration 101, perplexity 570
+iteration 111, perplexity 585
+----------FINISH----------
+Epoch 23, perplexity 569
+----------EPOCH24----------
+iteration 1, perplexity 589
+iteration 11, perplexity 543
+iteration 21, perplexity 564
+iteration 31, perplexity 555
+iteration 41, perplexity 548
+iteration 51, perplexity 572
+iteration 61, perplexity 571
+iteration 71, perplexity 615
+iteration 81, perplexity 569
+iteration 91, perplexity 563
+iteration 101, perplexity 565
+iteration 111, perplexity 581
+----------FINISH----------
+Epoch 24, perplexity 564
+----------EPOCH25----------
+iteration 1, perplexity 584
+iteration 11, perplexity 539
+iteration 21, perplexity 559
+iteration 31, perplexity 550
+iteration 41, perplexity 544
+iteration 51, perplexity 568
+iteration 61, perplexity 566
+iteration 71, perplexity 610
+iteration 81, perplexity 565
+iteration 91, perplexity 558
+iteration 101, perplexity 560
+iteration 111, perplexity 576
+----------FINISH----------
+Epoch 25, perplexity 559
+----------EPOCH26----------
+iteration 1, perplexity 580
+iteration 11, perplexity 535
+iteration 21, perplexity 555
+iteration 31, perplexity 546
+iteration 41, perplexity 540
+iteration 51, perplexity 564
+iteration 61, perplexity 562
+iteration 71, perplexity 606
+iteration 81, perplexity 561
+iteration 91, perplexity 554
+iteration 101, perplexity 556
+iteration 111, perplexity 572
+----------FINISH----------
+Epoch 26, perplexity 555
+----------EPOCH27----------
+iteration 1, perplexity 576
+iteration 11, perplexity 531
+iteration 21, perplexity 551
+iteration 31, perplexity 542
+iteration 41, perplexity 535
+iteration 51, perplexity 560
+iteration 61, perplexity 557
+iteration 71, perplexity 601
+iteration 81, perplexity 557
+iteration 91, perplexity 550
+iteration 101, perplexity 552
+iteration 111, perplexity 567
+----------FINISH----------
+Epoch 27, perplexity 551
+----------EPOCH28----------
+iteration 1, perplexity 572
+iteration 11, perplexity 528
+iteration 21, perplexity 547
+iteration 31, perplexity 538
+iteration 41, perplexity 531
+iteration 51, perplexity 556
+iteration 61, perplexity 553
+iteration 71, perplexity 597
+iteration 81, perplexity 554
+iteration 91, perplexity 547
+iteration 101, perplexity 548
+iteration 111, perplexity 564
+----------FINISH----------
+Epoch 28, perplexity 547
+----------EPOCH29----------
+iteration 1, perplexity 568
+iteration 11, perplexity 525
+iteration 21, perplexity 543
+iteration 31, perplexity 533
+iteration 41, perplexity 528
+iteration 51, perplexity 553
+iteration 61, perplexity 549
+iteration 71, perplexity 594
+iteration 81, perplexity 550
+iteration 91, perplexity 580
+iteration 101, perplexity 570
+iteration 111, perplexity 581
+----------FINISH----------
+Epoch 29, perplexity 552
+----------EPOCH30----------
+iteration 1, perplexity 583
+iteration 11, perplexity 531
+iteration 21, perplexity 553
+iteration 31, perplexity 542
+iteration 41, perplexity 533
+iteration 51, perplexity 558
+iteration 61, perplexity 556
+iteration 71, perplexity 596
+iteration 81, perplexity 551
+iteration 91, perplexity 545
+iteration 101, perplexity 545
+iteration 111, perplexity 562
+----------FINISH----------
+Epoch 30, perplexity 549
+----------EPOCH31----------
+iteration 1, perplexity 565
+iteration 11, perplexity 521
+iteration 21, perplexity 540
+iteration 31, perplexity 530
+iteration 41, perplexity 524
+iteration 51, perplexity 548
+iteration 61, perplexity 545
+iteration 71, perplexity 588
+iteration 81, perplexity 543
+iteration 91, perplexity 537
+iteration 101, perplexity 538
+iteration 111, perplexity 554
+----------FINISH----------
+Epoch 31, perplexity 539
+----------EPOCH32----------
+iteration 1, perplexity 558
+iteration 11, perplexity 517
+iteration 21, perplexity 534
+iteration 31, perplexity 524
+iteration 41, perplexity 519
+iteration 51, perplexity 544
+iteration 61, perplexity 542
+iteration 71, perplexity 592
+iteration 81, perplexity 546
+iteration 91, perplexity 536
+iteration 101, perplexity 536
+iteration 111, perplexity 564
+----------FINISH----------
+Epoch 32, perplexity 537
+----------EPOCH33----------
+iteration 1, perplexity 560
+iteration 11, perplexity 517
+iteration 21, perplexity 533
+iteration 31, perplexity 523
+iteration 41, perplexity 517
+iteration 51, perplexity 541
+iteration 61, perplexity 540
+iteration 71, perplexity 586
+iteration 81, perplexity 542
+iteration 91, perplexity 539
+iteration 101, perplexity 536
+iteration 111, perplexity 550
+----------FINISH----------
+Epoch 33, perplexity 535
+----------EPOCH34----------
+iteration 1, perplexity 554
+iteration 11, perplexity 513
+iteration 21, perplexity 535
+iteration 31, perplexity 524
+iteration 41, perplexity 516
+iteration 51, perplexity 541
+iteration 61, perplexity 538
+iteration 71, perplexity 579
+iteration 81, perplexity 538
+iteration 91, perplexity 539
+iteration 101, perplexity 533
+iteration 111, perplexity 553
+----------FINISH----------
+Epoch 34, perplexity 534
+----------EPOCH35----------
+iteration 1, perplexity 555
+iteration 11, perplexity 512
+iteration 21, perplexity 527
+iteration 31, perplexity 518
+iteration 41, perplexity 582
+iteration 51, perplexity 591
+iteration 61, perplexity 584
+iteration 71, perplexity 618
+iteration 81, perplexity 572
+iteration 91, perplexity 564
+iteration 101, perplexity 564
+iteration 111, perplexity 580
+----------FINISH----------
+Epoch 35, perplexity 562
+----------EPOCH36----------
+iteration 1, perplexity 586
+iteration 11, perplexity 535
+iteration 21, perplexity 556
+iteration 31, perplexity 546
+iteration 41, perplexity 538
+iteration 51, perplexity 563
+iteration 61, perplexity 562
+iteration 71, perplexity 600
+iteration 81, perplexity 556
+iteration 91, perplexity 551
+iteration 101, perplexity 550
+iteration 111, perplexity 566
+----------FINISH----------
+Epoch 36, perplexity 553
+----------EPOCH37----------
+iteration 1, perplexity 570
+iteration 11, perplexity 521
+iteration 21, perplexity 542
+iteration 31, perplexity 532
+iteration 41, perplexity 523
+iteration 51, perplexity 549
+iteration 61, perplexity 548
+iteration 71, perplexity 586
+iteration 81, perplexity 543
+iteration 91, perplexity 537
+iteration 101, perplexity 536
+iteration 111, perplexity 552
+----------FINISH----------
+Epoch 37, perplexity 539
+----------EPOCH38----------
+iteration 1, perplexity 555
+iteration 11, perplexity 510
+iteration 21, perplexity 528
+iteration 31, perplexity 519
+iteration 41, perplexity 511
+iteration 51, perplexity 537
+iteration 61, perplexity 535
+iteration 71, perplexity 573
+iteration 81, perplexity 530
+iteration 91, perplexity 526
+iteration 101, perplexity 526
+iteration 111, perplexity 542
+----------FINISH----------
+Epoch 38, perplexity 526
+----------EPOCH39----------
+iteration 1, perplexity 547
+iteration 11, perplexity 503
+iteration 21, perplexity 521
+iteration 31, perplexity 513
+iteration 41, perplexity 506
+iteration 51, perplexity 532
+iteration 61, perplexity 530
+iteration 71, perplexity 568
+iteration 81, perplexity 526
+iteration 91, perplexity 522
+iteration 101, perplexity 521
+iteration 111, perplexity 537
+----------FINISH----------
+Epoch 39, perplexity 521
+----------EPOCH40----------
+iteration 1, perplexity 543
+iteration 11, perplexity 499
+iteration 21, perplexity 517
+iteration 31, perplexity 509
+iteration 41, perplexity 502
+iteration 51, perplexity 528
+iteration 61, perplexity 526
+iteration 71, perplexity 564
+iteration 81, perplexity 523
+iteration 91, perplexity 518
+iteration 101, perplexity 518
+iteration 111, perplexity 534
+----------FINISH----------
+Epoch 40, perplexity 517
+----------EPOCH41----------
+iteration 1, perplexity 540
+iteration 11, perplexity 495
+iteration 21, perplexity 513
+iteration 31, perplexity 505
+iteration 41, perplexity 499
+iteration 51, perplexity 525
+iteration 61, perplexity 522
+iteration 71, perplexity 561
+iteration 81, perplexity 520
+iteration 91, perplexity 515
+iteration 101, perplexity 515
+iteration 111, perplexity 531
+----------FINISH----------
+Epoch 41, perplexity 514
+----------EPOCH42----------
+iteration 1, perplexity 537
+iteration 11, perplexity 493
+iteration 21, perplexity 510
+iteration 31, perplexity 502
+iteration 41, perplexity 496
+iteration 51, perplexity 522
+iteration 61, perplexity 519
+iteration 71, perplexity 557
+iteration 81, perplexity 517
+iteration 91, perplexity 512
+iteration 101, perplexity 512
+iteration 111, perplexity 528
+----------FINISH----------
+Epoch 42, perplexity 511
+----------EPOCH43----------
+iteration 1, perplexity 534
+iteration 11, perplexity 490
+iteration 21, perplexity 507
+iteration 31, perplexity 499
+iteration 41, perplexity 494
+iteration 51, perplexity 519
+iteration 61, perplexity 516
+iteration 71, perplexity 554
+iteration 81, perplexity 514
+iteration 91, perplexity 509
+iteration 101, perplexity 509
+iteration 111, perplexity 525
+----------FINISH----------
+Epoch 43, perplexity 508
+----------EPOCH44----------
+iteration 1, perplexity 531
+iteration 11, perplexity 487
+iteration 21, perplexity 504
+iteration 31, perplexity 496
+iteration 41, perplexity 491
+iteration 51, perplexity 516
+iteration 61, perplexity 513
+iteration 71, perplexity 551
+iteration 81, perplexity 512
+iteration 91, perplexity 506
+iteration 101, perplexity 506
+iteration 111, perplexity 522
+----------FINISH----------
+Epoch 44, perplexity 506
+----------EPOCH45----------
+iteration 1, perplexity 529
+iteration 11, perplexity 485
+iteration 21, perplexity 501
+iteration 31, perplexity 494
+iteration 41, perplexity 489
+iteration 51, perplexity 513
+iteration 61, perplexity 510
+iteration 71, perplexity 548
+iteration 81, perplexity 509
+iteration 91, perplexity 504
+iteration 101, perplexity 503
+iteration 111, perplexity 520
+----------FINISH----------
+Epoch 45, perplexity 503
+----------EPOCH46----------
+iteration 1, perplexity 526
+iteration 11, perplexity 482
+iteration 21, perplexity 498
+iteration 31, perplexity 491
+iteration 41, perplexity 486
+iteration 51, perplexity 511
+iteration 61, perplexity 508
+iteration 71, perplexity 545
+iteration 81, perplexity 507
+iteration 91, perplexity 501
+iteration 101, perplexity 501
+iteration 111, perplexity 517
+----------FINISH----------
+Epoch 46, perplexity 500
+----------EPOCH47----------
+iteration 1, perplexity 524
+iteration 11, perplexity 480
+iteration 21, perplexity 495
+iteration 31, perplexity 489
+iteration 41, perplexity 484
+iteration 51, perplexity 508
+iteration 61, perplexity 505
+iteration 71, perplexity 543
+iteration 81, perplexity 504
+iteration 91, perplexity 499
+iteration 101, perplexity 498
+iteration 111, perplexity 515
+----------FINISH----------
+Epoch 47, perplexity 498
+----------EPOCH48----------
+iteration 1, perplexity 522
+iteration 11, perplexity 478
+iteration 21, perplexity 493
+iteration 31, perplexity 486
+iteration 41, perplexity 481
+iteration 51, perplexity 506
+iteration 61, perplexity 503
+iteration 71, perplexity 540
+iteration 81, perplexity 502
+iteration 91, perplexity 497
+iteration 101, perplexity 496
+iteration 111, perplexity 512
+----------FINISH----------
+Epoch 48, perplexity 495
+----------EPOCH49----------
+iteration 1, perplexity 519
+iteration 11, perplexity 476
+iteration 21, perplexity 490
+iteration 31, perplexity 484
+iteration 41, perplexity 479
+iteration 51, perplexity 503
+iteration 61, perplexity 500
+iteration 71, perplexity 537
+iteration 81, perplexity 500
+iteration 91, perplexity 494
+iteration 101, perplexity 494
+iteration 111, perplexity 510
+----------FINISH----------
+Epoch 49, perplexity 493
+----------EPOCH50----------
+iteration 1, perplexity 517
+iteration 11, perplexity 474
+iteration 21, perplexity 488
+iteration 31, perplexity 481
+iteration 41, perplexity 477
+iteration 51, perplexity 501
+iteration 61, perplexity 498
+iteration 71, perplexity 535
+iteration 81, perplexity 498
+iteration 91, perplexity 492
+iteration 101, perplexity 492
+iteration 111, perplexity 508
+----------FINISH----------
+Epoch 50, perplexity 491
+Model parameters successfully saved !
+
+Process finished with exit code 0
