@@ -18,11 +18,12 @@ HIDDEN_SIZE = 32
 class LSTMLm:
     def __init__(self, word_index, embed_size, hidden_size):
         vocab_size = len(word_index)
+        np.random.seed(42)
         We = get_glove_vec(save_path='./glove.6B.50d.txt', word_index=word_index, word_dim=embed_size)
         Wx = np.random.randn(embed_size, 4*hidden_size)
         Wh = np.random.randn(hidden_size, 4*hidden_size)
         b = np.zeros(4*hidden_size)
-        Wl = np.random.randn(hidden_size, vocab_size)
+        Wl = .1*np.random.randn(hidden_size, vocab_size)
         bl = np.zeros(vocab_size)
 
         self.embed = Embedding(We)
@@ -81,35 +82,44 @@ def train():
     # loading training data
     data_batches, label_batches = make_batch(read_data('data/ptb.train'), batch_size=BATCH_SIZE, time_step=TIME_STEP)
     word_index = get_word_index()
+    # load test data
+    test_data_batches, test_label_batches = make_batch(read_data('data/ptb.test'), batch_size=BATCH_SIZE, time_step=TIME_STEP)
     # build model
     lm = LSTMLm(word_index=word_index, embed_size=EMBED_SIZE, hidden_size=HIDDEN_SIZE)
-    if os.path.exists('model/lm.npz'): lm.load_param()
+    lm.load_param(load_path='model/lm.npz')
     perplexities = []
+    test_pers = []
     opt = SGD(learning_rate=0.1)
     num_batches = len(data_batches)
     for epoch in range(MAX_EPOCHS):
         loss = 0
-        opt.lr = 1.0/(1.0+epoch)
+        # opt.lr = 1.0/(1.0+epoch)
         print("-"*10+"EPOCH"+str(epoch+1)+"-"*10)
         for i in range(num_batches):
             x = data_batches[i]
             y = label_batches[i]
             loss_ite = lm.forward(x, y)
-            perplexities.append(np.exp(loss_ite))
-            lm.backward()
-            opt.update(lm.params, lm.grads)
+            # perplexities.append(np.exp(loss_ite))
+            # lm.backward()
+            # opt.update(lm.params, lm.grads)
             loss += loss_ite
             if i % 10 == 0: print("iteration %d, perplexity %d" % (i+1, np.exp(loss_ite)))
         loss /= num_batches
+        losses = [lm.forward(test_data, test_label) for test_data, test_label in zip(test_data_batches, test_label_batches)]
+        test_loss = sum(losses)/len(losses)
+        perplexities.append(np.exp(loss))
+        test_pers.append(np.exp(test_loss))
         print("-"*10+"FINISH"+"-"*10)
-        print("Epoch %d, perplexity %d" % (epoch + 1, np.exp(loss)))
-    lm.save_param(save_path='model/lm60.npz')
+        print("Epoch %d, train loss %f, test loss %f " % (epoch + 1, loss, test_loss))
+    lm.save_param(save_path='model/lm_with_test_60.npz')
     import matplotlib.pyplot as plt
     plt.plot(perplexities, label='training perplexity')
-    plt.xlabel('step')
+    plt.plot(test_pers, label='test perplexity')
+    plt.plot()
+    plt.xlabel('epoch')
     plt.ylabel('perplexity')
     plt.legend()
-    plt.savefig('results/ptb/perplexity_epoch50-60.jpg')
+    plt.savefig('results/ptb/perplexity_with_test_epoch50-60.jpg')
 
 
 if __name__ == '__main__':

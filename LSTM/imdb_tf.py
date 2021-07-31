@@ -21,7 +21,7 @@ x_test, y_test = x_test[:500], y_test[:500]
 We = get_glove_vec(save_path='./glove.6B.50d.txt', word_index=word_index, word_dim=embed_size)[:10000]
 
 model = Sequential()
-model.add(Embedding(vocab_size, embed_size, embeddings_initializer=tf.keras.initializers.Constant(We)))
+model.add(Embedding(vocab_size, embed_size, embeddings_initializer=tf.keras.initializers.Constant(We), trainable=False))
 model.add(LSTM(hidden_size, return_sequences=True))
 model.add(GlobalAvgPool1D())
 model.add(Dense(output_size, activation='softmax'))
@@ -30,7 +30,7 @@ model.compile(loss=tf.keras.losses.sparse_categorical_crossentropy,
               optimizer=tf.keras.optimizers.SGD(learning_rate=1),
               metrics=['accuracy'])
 
-model.fit(x_train, y_train, batch_size=32, epochs=20, validation_data=(x_test, y_test))
+model.fit(x_train, y_train, batch_size=32, epochs=50, validation_data=(x_test, y_test))
 
 score = model.evaluate(x_test, y_test, batch_size=64)
 

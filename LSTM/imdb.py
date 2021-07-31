@@ -22,12 +22,21 @@ class SentiLSTM:
         # word vector look up matrix initialization
         We = get_glove_vec(save_path='./glove.6B.50d.txt', word_index=word_index, word_dim=embed_size)
         # LSTM layer parameters initialization
-        Wh = .1*np.random.randn(H, 4*H)
-        Wx = .1*np.random.randn(D, 4*H)
+        Wh = 0.1*np.random.randn(H, 4*H)
+        Wx = 0.1*np.random.rand(D, 4*H)
         b = np.zeros(4*H)
         # Linear layer
-        Wl = np.random.randn(H, O)
+        Wl = np.random.rand(H, O)
         bl = np.zeros(O)
+
+        # Xavier initialization
+        # # LSTM layer parameters initialization
+        # Wh = np.sqrt(6 / (hidden_size * 2)) * (np.random.rand(H, 4 * H) - 0.5) * 2
+        # Wx = np.sqrt(6 / (embed_size + hidden_size)) * (np.random.rand(D, 4 * H) - 0.5) * 2
+        # b = np.zeros(4 * H)
+        # # Linear layer
+        # Wl = np.sqrt(6 / (hidden_size + output_size)) * (np.random.rand(H, O) - 0.5) * 2
+        # bl = np.zeros(O)
 
         self.embed_layer = Embedding(We)
         self.lstm_layer = LSTM(Wx, Wh, b)
@@ -86,18 +95,36 @@ class SentiLSTM:
         accuracy = correct/N
         return accuracy
 
+    def save_param(self, save_path='model/senti.npz'):
+        np.savez(save_path,
+                 Wx=self.params[0], Wh=self.params[1], b=self.params[2],
+                 Wl=self.params[3], bl=self.params[4])
+        print("Model parameters successfully saved !")
+        return None
+
+    def load_param(self, load_path='model/senti.npz'):
+        npz = np.load(load_path)
+        self.params[0][...] = npz['Wx']
+        self.params[1][...] = npz['Wh']
+        self.params[2][...] = npz['b']
+        self.params[3][...] = npz['Wl']
+        self.params[4][...] = npz['bl']
+        print("Model parameters successfully loaded !")
+        return None
+
 
 def train_lstm_imdb():
     (train_data, train_labels), (test_data, test_labels), word_index = load_imdb()
     train_data, train_labels = train_data[:1000], train_labels[:1000]
-    test_data, test_labels = test_data[:500], test_labels[:500],
+    test_data, test_labels = test_data[:500], test_labels[:500]
     lstm = SentiLSTM(word_index=word_index, embed_size=50, hidden_size=32, output_size=2)
     opt = SGD(learning_rate=1, threshold=5)
     trainer = Trainer(model=lstm, optimizer=opt)
     trainer.fit(train_data, train_labels, test_data, test_labels, batch_size=32, epochs=100, decay=0.2)
-    opt.plot_norm(save_path='images/imdb/')
-    trainer.plot_losses(save_path='images/imdb/sentiment_loss_0.1.jpg')
-    trainer.plot_accuracy(save_path='images/imdb/sentiment_accuracy_0.1.jpg')
+    lstm.save_param()
+    opt.plot_norm(save_path='results/imdb/')
+    trainer.plot_losses(save_path='results/imdb/sentiment_loss.jpg')
+    trainer.plot_accuracy(save_path='results/imdb/sentiment_accuracy.jpg')
 
 
 if __name__ == '__main__':
