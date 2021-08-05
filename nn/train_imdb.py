@@ -6,6 +6,7 @@ from glove import get_glove_vec
 from data import load_imdb
 from functions import softmax
 import numpy as np
+from initializer import orthogonal
 
 
 class SentiLSTM:
@@ -23,6 +24,11 @@ class SentiLSTM:
         We = get_glove_vec(save_path='glove/glove.6B.50d.txt', word_index=word_index, word_dim=embed_size)[:10000]
         # LSTM layer parameters initialization
         Wh = 0.1*np.random.randn(H, 4*H)
+        # Wih = orthogonal(H)
+        # Wfh = orthogonal(H)
+        # Woh = orthogonal(H)
+        # Wch = orthogonal(H)
+        # Wh = np.hstack((Wih, Wfh, Woh, Wch))
         Wx = 0.1*np.random.rand(D, 4*H)
         b = np.zeros(4*H)
         # Linear layer
@@ -119,13 +125,13 @@ def train_lstm_imdb():
     train_data, train_labels = train_data[:1000], train_labels[:1000]
     test_data, test_labels = test_data[:500], test_labels[:500]
     lstm = SentiLSTM(word_index=word_index, embed_size=50, hidden_size=32, output_size=2)
-    opt = SGD(learning_rate=1, threshold=1)
+    opt = SGD(learning_rate=1, threshold=5)
     trainer = Trainer(model=lstm, optimizer=opt)
     trainer.fit(train_data, train_labels, test_data, test_labels, batch_size=32, epochs=100, decay=0.2)
-    lstm.save_param(save_path='model/senti_finetune.npz')
+    lstm.save_param(save_path='model/senti.npz')
     opt.plot_norm(save_path='results/imdb/')
-    trainer.plot_losses(save_path='results/imdb/sentiment_loss_finetune.jpg')
-    trainer.plot_accuracy(save_path='results/imdb/sentiment_accuracy_finetune.jpg')
+    trainer.plot_losses(save_path='results/imdb/sentiment_loss.jpg')
+    trainer.plot_accuracy(save_path='results/imdb/sentiment_accuracy.jpg')
 
 
 if __name__ == '__main__':

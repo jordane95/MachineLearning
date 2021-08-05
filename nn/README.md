@@ -2,7 +2,7 @@ A naïve LSTM implementation with Numpy, model performance tested on
 
 - [x] image classification (MNIST)
 - [x] sentiment analysis (IMDB)
-- [x] language modelling (Penn Tree)
+- [x] language modelling (PTB)
 
 ##  Experiment results
 
@@ -57,7 +57,7 @@ The results are shown as follows (w/o denote without updating embedding layer, w
 
 ### Language modelling
 
-We use the Penn Tree Bank dataset to train our LSTM language model. The model architecture is Embedding layer + LSTM + Linear Layer + Softmax Layer + Cross Entropy loss. The word embedding matrix is initialized by 50 dimensional GloVe vectors. The hidden size of recurrent layer is set to be 32. The linear layer share parameters across time. The word embeddings are fixed during training.
+We use the Penn Treebank dataset to train our LSTM language model. The model architecture is Embedding layer + LSTM + Linear Layer + Softmax Layer + Cross Entropy loss. The word embedding matrix is initialized by 50 dimensional GloVe vectors. The hidden size of recurrent layer is set to be 32. The linear layer share parameters across time. The word embeddings are fixed during training.
 
 The hyperparameter settings:
 
